@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: #222222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .box {
+      max-width: 420px;
+      width: 90%;
+      padding: 40px 26px;
+      border: 1px solid #ededed;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #35c659;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 14px 0;
+      width: 100%;
+      border-radius: 999px;
+      font-size: 18px;
+      border: none;
+      background: #7ee27b;
+      color: #ffffff;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Mulțumim pentru confirmare!</h1>
+    <p>Datele au fost trimise cu succes.</p>
+    <button onclick="window.location.href='/'" class="btn">Înapoi la autentificare</button>
+  </div>
+</body>
+</html>
