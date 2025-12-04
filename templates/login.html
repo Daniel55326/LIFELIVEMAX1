@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Autentificare cont</title>
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #ffffff;
-      color: #222222;
+      color: #222;
     }
 
     .page {
@@ -32,52 +30,44 @@
       margin-bottom: 40px;
     }
 
-    .form {
-      width: 100%;
-    }
+    .form { width: 100%; }
 
-    .input-group {
-      position: relative;
-      margin-bottom: 28px;
-    }
+    .input-group { margin-bottom: 28px; }
 
     .input-wrapper {
       display: flex;
       align-items: center;
-      border-bottom: 1px solid #ededed;
+      border-bottom: 1px solid #ececec;
       padding: 10px 0;
     }
 
     .input-icon {
       font-size: 18px;
       margin-right: 10px;
-      color: #c0c0c0;
+      opacity: 0.55;
     }
 
     .input-wrapper input {
+      width: 100%;
       border: none;
       outline: none;
-      width: 100%;
       font-size: 16px;
-      color: #333333;
+      background: transparent;
     }
 
     .input-wrapper input::placeholder {
-      color: #c0c0c0;
+      color: #bdbdbd;
     }
 
-    /* Eye icon SVG */
-    .eye-toggle {
+    /* eye icon SVG */
+    #eyeIcon {
       width: 22px;
       height: 22px;
       cursor: pointer;
-      margin-left: 8px;
       opacity: 0.6;
       transition: 0.2s;
     }
-    .eye-toggle:hover {
-      opacity: 1;
-    }
+    #eyeIcon:hover { opacity: 1; }
 
     .forget-row {
       text-align: right;
@@ -86,16 +76,13 @@
       font-size: 14px;
     }
 
-    .forget-row a {
-      color: #35c659;
-      text-decoration: none;
-    }
+    .forget-row a { color: #28c15c; text-decoration: none; }
 
     .checkbox-row {
       display: flex;
       align-items: flex-start;
       font-size: 14px;
-      color: #555555;
+      color: #555;
       margin-bottom: 30px;
     }
 
@@ -106,58 +93,49 @@
       margin-top: 2px;
     }
 
-    .checkbox-row a {
-      color: #f0a04b;
-      text-decoration: none;
-    }
+    .checkbox-row a { color: #28c15c; }
 
     .btn {
       width: 100%;
-      padding: 14px 0;
+      padding: 14px;
+      font-size: 18px;
       border-radius: 999px;
       border: none;
-      font-size: 18px;
       cursor: pointer;
-      transition: opacity 0.2s ease;
+      transition: 0.2s;
     }
 
     .btn-primary {
-      background: #7ee27b;
-      color: #ffffff;
+      background: #92f78f;
+      color: white;
       margin-bottom: 18px;
     }
 
     .btn-secondary {
-      background: #ffffff;
-      color: #555555;
-      border: 1px solid #f0f0f0;
+      background: white;
+      border: 1px solid #eee;
+      color: #555;
     }
 
-    .btn:hover {
-      opacity: 0.9;
-    }
+    .btn:hover { opacity: 0.9; }
 
     .country {
       text-align: center;
-      font-size: 16px;
-      color: #555555;
+      color: #555;
       margin-top: 40px;
-    }
-
-    .country span {
-      margin-left: 4px;
-      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
   <div class="page">
+
     <div>
       <h1 class="title">Autentificare cont</h1>
 
-      <!-- 💚 FORMULAR LEGAT CU PYTHON -->
-      <form class="form" action="http://localhost:5000/login" method="POST">
-        
+      <!-- FORMULAR -->
+      <form class="form" action="/login" method="POST">
+
         <!-- Email -->
         <div class="input-group">
           <div class="input-wrapper">
@@ -170,15 +148,13 @@
         <div class="input-group">
           <div class="input-wrapper">
             <span class="input-icon">🔒</span>
+            <input id="passField" type="password" name="password" placeholder="Introduceți parola" required>
 
-            <input id="passwordField" type="password" name="password" placeholder="Introduceți parola" required>
-
-            <!-- 🟢 Eye toggle SVG -->
-            <svg id="togglePassword" class="eye-toggle" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
-              <circle cx="12" cy="12" r="3"/>
+            <!-- Eye Icon (SVG) -->
+            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+              <circle cx="12" cy="12" r="3" />
             </svg>
-
           </div>
         </div>
 
@@ -187,40 +163,37 @@
           <a href="#">Ați uitat parola?</a>
         </div>
 
-        <!-- Termeni și condiții -->
+        <!-- Termeni -->
         <div class="checkbox-row">
-          <input type="checkbox" id="agree" required>
-          <label for="agree">
+          <input type="checkbox" required>
+          <label>
             Am citit și sunt de acord cu
-            <a href="#">„Termenii utilizatorului”</a> și
-            <a href="#">„Politica de confidențialitate”</a>
+            <a href="#">Termenii utilizatorului</a> și
+            <a href="#">Politica de confidențialitate</a>.
           </label>
         </div>
 
-        <!-- Butoane -->
-        <button type="submit" class="btn btn-primary">Autentificare</button>
-        <button type="button" class="btn btn-secondary">Înregistrare rapidă</button>
+        <button class="btn btn-primary" type="submit">Autentificare</button>
+        <button class="btn btn-secondary" type="button">Înregistrare rapidă</button>
+
       </form>
     </div>
 
-    <!-- Țara -->
-    <div class="country">
-      Moldova <span>▸</span>
-    </div>
+    <div class="country">Moldova ▸</div>
   </div>
 
-  <!-- 🟢 SCRIPT SHOW / HIDE PASSWORD -->
+  <!-- Script pentru afișarea/vizibilitatea parolei -->
   <script>
-    const passField = document.getElementById("passwordField");
-    const toggle = document.getElementById("togglePassword");
+    const pass = document.getElementById("passField");
+    const eye = document.getElementById("eyeIcon");
 
-    toggle.addEventListener("click", () => {
-      if (passField.type === "password") {
-        passField.type = "text";
-        toggle.style.opacity = "1";
+    eye.addEventListener("click", () => {
+      if (pass.type === "password") {
+        pass.type = "text";
+        eye.style.opacity = "1";
       } else {
-        passField.type = "password";
-        toggle.style.opacity = "0.6";
+        pass.type = "password";
+        eye.style.opacity = "0.6";
       }
     });
   </script>
