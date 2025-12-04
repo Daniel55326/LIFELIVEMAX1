@@ -1,71 +1,79 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Confirmare</title>
+
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #ffffff;
-      color: #222222;
+      color: #222;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
 
     .box {
+      width: 100%;
       max-width: 420px;
-      width: 90%;
+      background: white;
+      border: 1px solid #e6e6e6;
+      border-radius: 22px;
       padding: 40px 26px;
-      border: 1px solid #ededed;
-      border-radius: 20px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
     }
 
     h1 {
       font-size: 28px;
-      font-weight: 500;
-      margin-bottom: 20px;
+      font-weight: 600;
       color: #35c659;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 18px;
-      color: #555555;
-      margin-bottom: 20px;
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.4;
     }
 
     .btn {
-      margin-top: 20px;
-      padding: 14px 0;
       width: 100%;
+      padding: 14px;
       border-radius: 999px;
-      font-size: 18px;
       border: none;
+      font-size: 18px;
       background: #7ee27b;
-      color: #ffffff;
+      color: white;
       cursor: pointer;
-      transition: opacity 0.2s ease;
+      transition: 0.2s ease;
     }
 
     .btn:hover {
-      opacity: 0.9;
+      opacity: 0.85;
     }
   </style>
 </head>
+
 <body>
   <div class="box">
     <h1>Mulțumim pentru confirmare!</h1>
     <p>Datele au fost trimise cu succes.</p>
-    <button onclick="window.location.href='/'" class="btn">Înapoi la autentificare</button>
+
+    <button class="btn" onclick="window.location.href='/'">
+      Înapoi la autentificare
+    </button>
   </div>
 </body>
 </html>
